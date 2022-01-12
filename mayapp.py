@@ -102,7 +102,7 @@ asean_fig.add_layout(asean_fig.legend[0], 'right')
 asean_fig.legend.click_policy = 'mute'
 
 # Show the plot
-show(asean_fig)
+curdoc().add_root(asean_fig)
 
 
 
