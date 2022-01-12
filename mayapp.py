@@ -1,5 +1,4 @@
 import pandas as pd
-from bokeh.io import output_file, output_notebook,curdoc
 
 vaccine_country = pd.read_csv('country_vaccinations.csv')
 
@@ -29,7 +28,7 @@ asean.shape
 
 # Bokeh libraries
 from bokeh.plotting import figure, show
-from bokeh.io import output_notebook
+from bokeh.io import output_notebook,curdoc
 from bokeh.models import ColumnDataSource, CDSView, GroupFilter
 
 # Output to file
