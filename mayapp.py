@@ -1,4 +1,5 @@
 import pandas as pd
+from bokeh.io import output_file, output_notebook,curdoc
 
 vaccine_country = pd.read_csv('country_vaccinations.csv')
 
