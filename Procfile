@@ -1,1 +1,1 @@
-web: bokeh serve --port=$PORT --allow-websocket-origin=apptubes.herokuapp.com --address=0.0.0.0 --use-xheaders mayapp.py
+web: bokeh serve --port=$PORT --allow-websocket-origin=oriyu..herokuapp.com --address=0.0.0.0 --use-xheaders mayapp.py
