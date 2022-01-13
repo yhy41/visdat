@@ -181,8 +181,8 @@ def update_plot(attr, old, new):
     
     # inisiasii data baru
     new_data = {
-    'x'       : data[[x]],
-    'y'       : data[[y]],
+    'x'       : idn_data[[x]],
+    'y'       : idn_data[[y]],
     }
 
     # mengganti data dalam CDS
