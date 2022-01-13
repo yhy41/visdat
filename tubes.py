@@ -147,18 +147,22 @@ idn_data.head()
 
 # membuat inisiasi HoverTool yang akan digunakan
 tooltips = [
-            ('Total Vaccination', '@total_vaccinations'),
-            ('Daily Vaccination', '@daily_vaccinations'),
-            ('People Vaccinated', '@people_vaccinated'),
-            ('People Fully Vaccinated', '@people_fully_vaccinated'),
-            ('Date', '@date_str')
+            ('Total Vaccination', '@total'),
+            ('Daily Vaccination', '@daily'),
+            ('People Vaccinated', '@people'),
+            ('People Fully Vaccinated', '@fully'),
+            ('Date', '@date')
            ]
 
 # membuat ColumnDataSource untuk data negara Indonesia
-# membuat ColumnDataSource untuk data negara Indonesia
 source = ColumnDataSource(data={
     'x'     : idn_data.total_vaccinations,
-    'y'     : idn_data.people_vaccinated
+    'y'     : idn_data.people_vaccinated,
+    'total' : idn_data.total_vaccinations,
+    'daily' : idn_data.daily_vaccinations,
+    'people': idn_data.people_vaccinated,
+    'fully' : idn_data.people_fully_vaccinated,
+    'date'  : idn_data.date_str
 })
 
 # membuat dan mengonfigurasi figure yang akan digunakan
@@ -180,10 +184,15 @@ def update_plot(attr, old, new):
     IDN_plot.xaxis.axis_label = x
     IDN_plot.yaxis.axis_label = y
     
-    # inisiasii data baru
+  # inisiasii data baru
     new_data = {
     'x'       : idn_data[x],
     'y'       : idn_data[y],
+    'total'   : idn_data.total_vaccinations,
+    'daily'   : idn_data.daily_vaccinations,
+    'people'  : idn_data.people_vaccinated,
+    'fully'   : idn_data.people_fully_vaccinated,
+    'date'    : idn_data.date_str
     }
 
     # mengganti data dalam CDS
