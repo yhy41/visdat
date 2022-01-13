@@ -155,14 +155,18 @@ tooltips = [
            ]
 
 # membuat ColumnDataSource untuk data negara Indonesia
-source = ColumnDataSource(idn_data)
+# membuat ColumnDataSource untuk data negara Indonesia
+source = ColumnDataSource(data={
+    'x'     : idn_data.total_vaccinations,
+    'y'     : idn_data.people_vaccinated
+})
 
 # membuat dan mengonfigurasi figure yang akan digunakan
 IDN_plot = figure(title='Data Vaccinations in Indonesia', x_axis_label='total_vaccinations', y_axis_label='people_vaccinated',
            plot_height=400, plot_width=700, tools=[HoverTool(tooltips=tooltips)])
 
 # mem-plot berdasarkan ColumnDataSource dengan bentuk lingkaran
-IDN_plot.circle(x='total_vaccinations', y='people_vaccinated', source=source, fill_alpha=0.8)
+IDN_plot.circle(x='x', y='y', source=source, fill_alpha=0.8)
 
 # fungsi untuk meng-update plot setelah interaksi
 def update_plot(attr, old, new):
