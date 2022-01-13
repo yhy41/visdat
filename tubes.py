@@ -15,7 +15,7 @@ from bokeh.plotting import figure, show
 from bokeh.io import output_notebook
 from bokeh.io import output_file
 from bokeh.io import curdoc
-from bokeh.io import show
+from bokeh.io import show,curdoc
 
 from bokeh.models import ColumnDataSource, CDSView, GroupFilter
 from bokeh.models import HoverTool, ColumnDataSource
@@ -127,7 +127,7 @@ asean_fig.add_layout(asean_fig.legend[0], 'right')
 asean_fig.legend.click_policy = 'mute'
 
 # menampilkan hasil figure
-show(asean_fig)
+curdoc().add_root(asean_fig)
 
 # filter untuk mendapatkan negara Indonesia berdasarkan kode iso
 IDN_condition = (vaccine_country['iso_code'] == 'IDN')
@@ -240,4 +240,4 @@ IDN_panel = Panel(child=layout, title='Indonesia Panel')
 tabs = Tabs(tabs=[asean_panel, IDN_panel])
 
 # Show the tabbed layout
-show(tabs)
+curdoc().add_root(tabs)
