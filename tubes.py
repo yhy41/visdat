@@ -44,9 +44,6 @@ asean['date'] = pd.to_datetime(asean['date'], format='%Y-%m-%d')
 
 asean.head()
 
-# mengoutputkan dalam notebook
-output_notebook()
-
 # membuat ColumnDataSource untuk data negara ASEAN
 asean_cds = ColumnDataSource(asean)
 
@@ -214,10 +211,6 @@ y_select.on_change('value', update_plot)
 layout = row(Column(x_select, y_select), IDN_plot)
 curdoc().add_root(layout)
 
-show(layout)
-
-# mengoutputkan dalam notebook
-output_notebook()
 
 # menyamakan lebar dari fugure dan layout
 asean_fig.plot_width = layout.width = 800
